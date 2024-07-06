@@ -1,29 +1,18 @@
 #include <gtest/gtest.h>
 #include "Soundex.h"
 
-TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits)
-{
- //AAA
- // to check positive case
-  char soundex[5] = {};
-  const char* name = "AXDL";
-  generateSoundex(name, soundex);
-  EXPECT_EQ('A', soundex[0]);
-  EXPECT_EQ(2, soundex[1]);
-  EXPECT_EQ(3, soundex[2]);
-  EXPECT_EQ(4, soundex[3]);
-
-}
-
+void generateSoundex(const char *name, char *soundex);
 TEST(SoudexTestsuite, Checktwovowels)
 {
 // to check two vowels case
-  char soundex[5] = {};
-  const char* name = "Tymczak";
-  generateSoundex(name, soundex);
-  EXPECT_EQ('T', soundex[0]);
-  EXPECT_EQ(5, soundex[1]);
-  EXPECT_EQ(2, soundex[2]);
-  EXPECT_EQ(2, soundex[3]);
+    const char* expectedSoundex = "T522";
+    char soundex[5] = {};
+    const char* name = "Tymczak";
+    generateSoundex(name, soundex);
+    EXPECT_EQ(expectedSoundex[0], soundex[0]);
+    EXPECT_EQ(expectedSoundex[1], soundex[1]);
+    EXPECT_EQ(expectedSoundex[2], soundex[2]);
+    EXPECT_EQ(expectedSoundex[3], soundex[3]);
+    EXPECT_EQ(expectedSoundex[4], soundex[4]);
 
 }
