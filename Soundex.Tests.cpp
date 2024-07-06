@@ -18,7 +18,6 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits)
 
 TEST(SoudexTestsuite, case2)
 {
- //AAA
  // to check positive case
   char soundex[5] = {};
   const char* name = "Robert";
@@ -27,5 +26,16 @@ TEST(SoudexTestsuite, case2)
   EXPECT_EQ('1', soundex[1]);
   EXPECT_EQ('6', soundex[2]);
   EXPECT_EQ('3', soundex[3]);
+}
 
+TEST(SoudexTestsuite, checktwovowel)
+{
+ // to check two vowel
+  char soundex[5] = {};
+  const char* name = "Tymczak";
+  generateSoundex(name, soundex);
+  EXPECT_EQ('T', soundex[0]);
+  EXPECT_EQ('5', soundex[1]);
+  EXPECT_EQ('2', soundex[2]);
+  EXPECT_EQ('2', soundex[3]);
 }
