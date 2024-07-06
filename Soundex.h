@@ -59,11 +59,22 @@ int Fun_set3value(char c)
         return Fun_set4value(c);
     }
 }
-
+int Array2check(char c)
+{
+    char Set2Array[8] = {'C','G','J','K','Q','S','X','Z'};
+     for (int i = 0; i < 8; i++)
+    {
+        if (c == Set2Array[i])
+        {
+            return 1;
+            break;
+        }
+    }
+}
 int Fun_set2value(char c)
 {
     c = toupper(c);
-    if (c == 'C' || c == 'G' || c=='J' || c=='k' || c=='Q' || c=='S' || c=='X' || c=='Z')
+    if (Array2check(c) == 1)
     {
         return 2;
     }
