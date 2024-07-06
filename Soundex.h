@@ -135,22 +135,44 @@ void padzeros(char* soundex, int sIndex)
     }
 }
 
-void updatesoundex(char code, char* soundex, int* sIndex)
- {
-    if (code != '0' && code != soundex[(*sIndex) - 1])
+void updatesoundexvowel(char code, char* soundex, int* sIndex, char* previous_code)
+{
+    
+    if((*previous_code) == '0' && code == soundex[(*sIndex) - 1])
     {
-        soundex[(*sIndex)++] = code;
+            soundex[(*sIndex)++] = code;
+    }
+    else if(code != soundex[(*sIndex) - 1])
+    {
+            soundex[(*sIndex)++] = code;
     }
 }
 
-void generateSoundex(const char *name, char *soundex) {
+
+void updatesoundex(char code, char* soundex, int* sIndex,char* previous_code)
+ {
+    
+    if (code != '0' )
+    {
+        updatesoundexvowel(code, soundex, sIndex, previous_code);
+    }
+    else
+    {
+        (*previous_code) = code;
+    }
+    
+}
+
+void generateSoundex(const char *name, char *soundex)
+ {
     int len = strlen(name);
     soundex[0] = toupper(name[0]);
     int sIndex = 1;
+    char previous_code = '7';
 
     for (int i = 1; i < len && sIndex < 4; i++) {
         char code = getSoundexCode(name[i]);
-        updatesoundex(code, soundex, &sIndex);
+        updatesoundex(code, soundex, &sIndex,&previous_code);
         
     }
     padzeros(soundex,sIndex);
