@@ -142,6 +142,7 @@ void padzeros(char* soundex, int sIndex)
     {
         soundex[sIndex++] = '0';
     }
+    soundex[4] = '\0';
 }
 void generateSoundex(const char *name, char *soundex) {
     int len = strlen(name);
@@ -154,7 +155,7 @@ void generateSoundex(const char *name, char *soundex) {
         
     }
     padzeros(soundex,sIndex);
-    soundex[4] = '\0';
+    
 }
 
 #endif // SOUNDEX_H
