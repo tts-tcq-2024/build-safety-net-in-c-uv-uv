@@ -130,10 +130,9 @@ char getSoundexCode(char c) {
 
 int updatesoundex(char code, char* soundex, int sIndex)
 {
-    if (code != '0' && code != soundex)
+    if (code != '0' && code != soundex[sIndex - 1])
      {
-        soundex[sIndex] = code;
-        sIndex=sIndex+1;
+        soundex[sIndex++] = code;
         return sIndex;
      }
      else
