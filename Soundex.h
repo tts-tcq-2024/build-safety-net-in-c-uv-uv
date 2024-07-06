@@ -123,14 +123,14 @@ int Fun_set1value(char c)
     }
 }
 
-char getSoundexCode(char c) {
+int getSoundexCode(char c) {
     return Fun_set1value(c);
 
 }
 
 int updatesoundex(char code, char* soundex, int sIndex)
 {
-    if (code != 0 && code != int(soundex[sIndex - 1]))
+    if (code != 0 && code != soundex[sIndex - 1])
      {
         soundex[sIndex++] = code;
         return sIndex;
