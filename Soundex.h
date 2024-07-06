@@ -12,6 +12,10 @@ int Fun_set6value(char c)
     {
         return 6;
     }
+    else
+    {
+        return 0;
+    }
 }
 
 
@@ -82,21 +86,8 @@ int Fun_set1value(char c)
     }
 }
 
-int Fun_set0value(char c)
-{
-    c = toupper(c);
-    if (c == 'A' || c == 'E' || c=='I' || c=='O' || c=='U' || c=='H' || c=='W' || c=='Y')
-    {
-        return 0;
-    }
-    else
-    {
-        return Fun_set1value(c);
-    }
-}
-
 char getSoundexCode(char c) {
-    return Fun_set0value(c);
+    return Fun_set1value(c);
 
 }
 
