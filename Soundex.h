@@ -6,7 +6,6 @@
 #include <string.h>
 
 
-
 int Arraycheck(char c, int row_value ,int column_value)
 {
     char SetArray[6][8] = {
@@ -37,11 +36,11 @@ char Fun_set6value(char c)
     int column_value = 1;
     if (Arraycheck(c,row_value,column_value) == 1)
     {
-        return 6;
+        return '6';
     }
     else
     {
-        return 0;
+        return '0';
     }
 }
 
@@ -53,7 +52,7 @@ char Fun_set5value(char c)
     int column_value = 2;
     if (Arraycheck(c,row_value,column_value) == 1)
     {
-        return 5;
+        return '5';
     }
     else
     {
@@ -69,7 +68,7 @@ char Fun_set4value(char c)
     int column_value = 1;
     if (Arraycheck(c,row_value,column_value) == 1)
     {
-        return 4;
+        return '4';
     }
     else
     {
@@ -85,7 +84,7 @@ char Fun_set3value(char c)
     int column_value = 2;
     if (Arraycheck(c,row_value,column_value) == 1)
     {
-        return 3;
+        return '3';
     }
     else
     {
@@ -99,7 +98,7 @@ char Fun_set2value(char c)
     int column_value = 8;
     if (Arraycheck(c,row_value,column_value) == 1)
     {
-        return 2;
+        return '2';
     }
     else
     {
@@ -115,7 +114,7 @@ char Fun_set1value(char c)
     int column_value = 4;
     if (Arraycheck(c,row_value,column_value) == 1)
     {
-        return 1;
+        return '1';
     }
     else
     {
@@ -128,42 +127,33 @@ char getSoundexCode(char c) {
 
 }
 
-int updatesoundex(const char* name,char* soundex, int Index1, int i)
- {
-        char code = getSoundexCode(name[i]);
-        if (code != '0' && code != soundex[Index1 - 1])
-        {
-            soundex[Index1] = code;
-            printf("soundex %c",soundex[Index1]);
-            return Index1+1;
-            
-        }
-        else
-        {
-            return Index1;
-        }
-}
-
 void padzeros(char* soundex, int sIndex)
 {
     while (sIndex < 4)
     {
         soundex[sIndex++] = '0';
     }
-    soundex[4] = '\0';
 }
+
+void updatesoundex(char code, char* soundex, int* sIndex)
+ {
+    if (code != '0' && code != soundex[(*sIndex) - 1])
+    {
+        soundex[(*sIndex)++] = code;
+    }
+}
+
 void generateSoundex(const char *name, char *soundex) {
     int len = strlen(name);
     soundex[0] = toupper(name[0]);
     int sIndex = 1;
 
-    for (int i = 1; i < len && sIndex < 4; i++)
-    {
-       sIndex = updatesoundex(name,soundex,sIndex,i);
+    for (int i = 1; i < len && sIndex < 4; i++) {
+        char code = getSoundexCode(name[i]);
+        updatesoundex(code, soundex, &sIndex);
         
     }
     padzeros(soundex,sIndex);
-    
+    soundex[4] = '\0';
 }
-
 #endif // SOUNDEX_H
