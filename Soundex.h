@@ -9,14 +9,13 @@
 
 int Arraycheck(char c, int row_value ,int column_value)
 {
-    char SetArray[7][8] = {
+    char SetArray[6][8] = {
     {'B','F','P','V'},
     {'C','G','J','K','Q','S','X','Z'},
     {'D','T'},
     {'L'},
     {'M','N'},
-    {'R'},
-    {'A','E','I','O','U','H','W','Y'}
+    {'R'}
     };
 
      for (int i = 0; i < column_value; i++)
@@ -34,7 +33,9 @@ int Arraycheck(char c, int row_value ,int column_value)
 int Fun_set6value(char c)
 {
     c = toupper(c);
-    if (c == 'R')
+    int row_value = 5;
+    int column_value = 1;
+    if (Arraycheck(c,row_value,column_value) == 1)
     {
         return 6;
     }
@@ -48,7 +49,9 @@ int Fun_set6value(char c)
 int Fun_set5value(char c)
 {
     c = toupper(c);
-    if (c == 'M' || c == 'N')
+    int row_value = 4;
+    int column_value = 2;
+    if (Arraycheck(c,row_value,column_value) == 1)
     {
         return 5;
     }
@@ -62,7 +65,9 @@ int Fun_set5value(char c)
 int Fun_set4value(char c)
 {
     c = toupper(c);
-    if (c == 'L')
+    int row_value = 3;
+    int column_value = 1;
+    if (Arraycheck(c,row_value,column_value) == 1)
     {
         return 4;
     }
@@ -76,7 +81,9 @@ int Fun_set4value(char c)
 int Fun_set3value(char c)
 {
     c = toupper(c);
-    if (c == 'D' || c == 'T')
+    int row_value = 2;
+    int column_value = 2;
+    if (Arraycheck(c,row_value,column_value) == 1)
     {
         return 3;
     }
@@ -100,24 +107,13 @@ int Fun_set2value(char c)
     }
 }
 
-int Array1check(char c)
-{
-    char Set1Array[4] = {'B','F','P','V'};
-     for (int i = 0; i < 4; i++)
-    {
-        if (c == Set1Array[i])
-        {
-            return 1;
-            break;
-        }
-    }
-    return 0;
-}
 
 int Fun_set1value(char c)
 {
     c = toupper(c);
-    if (Array1check(c) == 1)
+    int row_value = 0;
+    int column_value = 4;
+    if (Arraycheck(c,row_value,column_value) == 1)
     {
         return 1;
     }
