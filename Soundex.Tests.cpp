@@ -5,9 +5,9 @@ void generateSoundex(const char *name, char *soundex);
 TEST(SoudexTestsuite, Checktwovowels)
 {
 // to check two vowels case
-    const char* expectedSoundex = "T522";
+    const char* expectedSoundex = "R163";
     char soundex[5] = {};
-    const char* name = "Tymczak";
+    const char* name = "Robert";
     generateSoundex(name, soundex);
     EXPECT_EQ(expectedSoundex[0], soundex[0]);
     EXPECT_EQ(expectedSoundex[1], soundex[1]);
