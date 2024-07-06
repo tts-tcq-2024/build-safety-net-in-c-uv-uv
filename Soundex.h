@@ -18,17 +18,7 @@ int Fun_set6value(char c)
 int Fun_set5value(char c)
 {
     c = toupper(c);
-    char Set5Array[2] = {'M','N'};
-    int count =0;
-    for (int i = 0; i < 2; i++)
-    {
-        if (c == Set5Array[i])
-        {
-            count = count + 1;
-            break;
-        }
-    }
-    if (count == 1)
+    if (c == 'M' || c == "N")
     {
         return 5;
     }
@@ -56,17 +46,7 @@ int Fun_set4value(char c)
 int Fun_set3value(char c)
 {
     c = toupper(c);
-    char Set3Array[2] = {'D','T'};
-    int count =0;
-    for (int i = 0; i < 2; i++)
-    {
-        if (c == Set3Array[i])
-        {
-            count = count + 1;
-            break;
-        }
-    }
-    if (count == 1)
+    if (c == 'D' || c == 'T')
     {
         return 3;
     }
@@ -79,17 +59,7 @@ int Fun_set3value(char c)
 int Fun_set2value(char c)
 {
     c = toupper(c);
-    char Set2Array[8] = {'C','G','J','K','Q','S','X','Z'};
-    int count =0;
-    for (int i = 0; i < 8; i++)
-    {
-        if (c == Set2Array[i])
-        {
-            count = count + 1;
-            break;
-        }
-    }
-    if (count == 1)
+    if (c == 'C' || c == 'G' || c=='J' || c=='k' || c=='Q' || c=='S' || c=='X' || c=='Z')
     {
         return 2;
     }
@@ -102,17 +72,7 @@ int Fun_set2value(char c)
 int Fun_set1value(char c)
 {
     c = toupper(c);
-    char Set1Array[4] = {'B','F','P','V'};
-    int count =0;
-    for (int i = 0; i < 4; i++)
-    {
-        if (c == Set1Array[i])
-        {
-            count = count + 1;
-            break;
-        }
-    }
-    if (count == 1)
+    if (c == 'B' || c == 'F' || c=='P' || c=='V')
     {
         return 1;
     }
@@ -125,17 +85,7 @@ int Fun_set1value(char c)
 int Fun_set0value(char c)
 {
     c = toupper(c);
-    char Set0Array[8] = {'A','E','I','O','U','H','W','Y'};
-    int count =0;
-    for (int i = 0; i < 8; i++)
-    {
-        if (c == Set0Array[i])
-        {
-            count = count + 1;
-            break;
-        }
-    }
-    if (count == 1)
+    if (c == 'A' || c == 'E' || c=='I' || c=='O' || c=='U' || c=='H' || c=='W' || c=='Y')
     {
         return 0;
     }
@@ -144,9 +94,6 @@ int Fun_set0value(char c)
         return Fun_set1value(c);
     }
 }
-
-
-
 
 char getSoundexCode(char c) {
     return Fun_set0value(c);
