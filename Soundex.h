@@ -159,7 +159,7 @@ void generateSoundex(const char *name, char *soundex) {
 
     for (int i = 1; i < len && sIndex < 4; i++)
     {
-       sIndex = updatesoundex(soundex,sIndex)
+       sIndex = updatesoundex(soundex,sIndex);
         
     }
     padzeros(soundex,sIndex);
