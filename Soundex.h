@@ -130,6 +130,14 @@ int updatesoundex(char code, char* soundex, int sIndex)
      }
      
 }
+
+void padzeros(char* soundex, int sIndex)
+{
+    while (sIndex < 4)
+    {
+        soundex[sIndex++] = '0';
+    }
+}
 void generateSoundex(const char *name, char *soundex) {
     int len = strlen(name);
     soundex[0] = toupper(name[0]);
@@ -140,11 +148,7 @@ void generateSoundex(const char *name, char *soundex) {
         sIndex = updatesoundex(code,soundex,sIndex);
         
     }
-
-    while (sIndex < 4) {
-        soundex[sIndex++] = '0';
-    }
-
+    padzeros(soundex,sIndex);
     soundex[4] = '\0';
 }
 
