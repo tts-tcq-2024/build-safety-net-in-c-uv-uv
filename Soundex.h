@@ -8,21 +8,12 @@
 int Fun_set6value(char c)
 {
     c = toupper(c);
-    char Set6Array[1] = {'R'};
-    int count =0;
-    for (int i = 0; i < 1; i++)
-    {
-        if (c == Set6Array[i])
-        {
-            count = count + 1;
-            break;
-        }
-    }
-    if (count == 1)
+    if (c == 'R')
     {
         return 6;
     }
 }
+
 
 int Fun_set5value(char c)
 {
@@ -51,17 +42,7 @@ int Fun_set5value(char c)
 int Fun_set4value(char c)
 {
     c = toupper(c);
-    char Set4Array[1] = {'L'};
-    int count =0;
-    for (int i = 0; i < 1; i++)
-    {
-        if (c == Set4Array[i])
-        {
-            count = count + 1;
-            break;
-        }
-    }
-    if (count == 1)
+    if (c == 'L')
     {
         return 4;
     }
