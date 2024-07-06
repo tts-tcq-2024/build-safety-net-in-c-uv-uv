@@ -51,3 +51,15 @@ TEST(SoudexTestsuite, checkzeropadding)
   EXPECT_EQ('0', soundex[2]);
   EXPECT_EQ('0', soundex[3]);
 }
+
+TEST(SoudexTestsuite, Secondsameasfirst)
+{
+ // to check padding if second letter same as first
+  char soundex[5] = {};
+  const char* name = "Pfister";
+  generateSoundex(name, soundex);
+  EXPECT_EQ('P', soundex[0]);
+  EXPECT_EQ('2', soundex[1]);
+  EXPECT_EQ('3', soundex[2]);
+  EXPECT_EQ('6', soundex[3]);
+}
