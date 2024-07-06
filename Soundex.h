@@ -172,7 +172,7 @@ void updatesoundex(char code, char* soundex, int* sIndex,char* previous_code)
 void generateSoundex(const char *name, char *soundex)
  {
     int len = strlen(name);
-    soundex[0] = toupper(name[0]);
+    soundex[0] = getSoundexCode(name[0]);
     int sIndex = 1;
     char previous_code = '7';
 
@@ -181,6 +181,7 @@ void generateSoundex(const char *name, char *soundex)
         updatesoundex(code, soundex, &sIndex,&previous_code);
         
     }
+    soundex[0] = toupper(name[0]);
     padzeros(soundex,sIndex);
     soundex[4] = '\0';
 }
