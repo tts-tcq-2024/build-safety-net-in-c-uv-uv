@@ -144,7 +144,7 @@ int Fun_set1value(char c)
 int Fun_set0value(char c)
 {
     c = toupper(c);
-    char Set0Array[8] = {'A'.'E','I','O','U','H','W','Y'};
+    char Set0Array[8] = {'A','E','I','O','U','H','W','Y'};
     int count =0;
     for (int i = 0; i < 8; i++)
     {
@@ -168,7 +168,7 @@ int Fun_set0value(char c)
 
 
 char getSoundexCode(char c) {
-    Fun_set0value(c);
+    return Fun_set0value(c);
 
 }
 
