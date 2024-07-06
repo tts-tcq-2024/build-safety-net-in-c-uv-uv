@@ -30,7 +30,7 @@ int Arraycheck(char c, int row_value ,int column_value)
 }
 
 
-int Fun_set6value(char c)
+char Fun_set6value(char c)
 {
     c = toupper(c);
     int row_value = 5;
@@ -46,7 +46,7 @@ int Fun_set6value(char c)
 }
 
 
-int Fun_set5value(char c)
+char Fun_set5value(char c)
 {
     c = toupper(c);
     int row_value = 4;
@@ -62,7 +62,7 @@ int Fun_set5value(char c)
 }
 
 
-int Fun_set4value(char c)
+char Fun_set4value(char c)
 {
     c = toupper(c);
     int row_value = 3;
@@ -78,7 +78,7 @@ int Fun_set4value(char c)
 }
 
 
-int Fun_set3value(char c)
+char Fun_set3value(char c)
 {
     c = toupper(c);
     int row_value = 2;
@@ -92,7 +92,7 @@ int Fun_set3value(char c)
         return Fun_set4value(c);
     }
 }
-int Fun_set2value(char c)
+char Fun_set2value(char c)
 {
     c = toupper(c);
     int row_value = 1;
@@ -108,7 +108,7 @@ int Fun_set2value(char c)
 }
 
 
-int Fun_set1value(char c)
+char Fun_set1value(char c)
 {
     c = toupper(c);
     int row_value = 0;
