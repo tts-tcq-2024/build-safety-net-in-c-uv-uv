@@ -3,7 +3,12 @@
 
 TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
  //AAA
-  char soundex[5];
-  // to check positive case
-  ASSERT_EQ("A234",(generateSoundex("AXDL", soundex)));
+ // to check positive case
+  char soundex[5] = {};
+  const char* name = "AXDL";
+  generateSoundex(name, soundex);
+  EXPECT_EQ('A', soundex[0]);
+  EXPECT_EQ('2', soundex[1]);
+  EXPECT_EQ('3', soundex[2]);
+  EXPECT_EQ('4', soundex[3]);
 }
