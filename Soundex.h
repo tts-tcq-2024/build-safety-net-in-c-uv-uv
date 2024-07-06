@@ -134,7 +134,13 @@ void padzeros(char* soundex, int sIndex)
         soundex[sIndex++] = '0';
     }
 }
-
+void updatesoundexarray(char code, char* soundex, int* sIndex)
+{
+    if(code != soundex[(*sIndex) - 1])
+    {
+            soundex[(*sIndex)++] = code;
+    }
+}
 void updatesoundexvowel(char code, char* soundex, int* sIndex, char* previous_code)
 {
     
@@ -142,9 +148,9 @@ void updatesoundexvowel(char code, char* soundex, int* sIndex, char* previous_co
     {
             soundex[(*sIndex)++] = code;
     }
-    else if(code != soundex[(*sIndex) - 1])
+    else 
     {
-            soundex[(*sIndex)++] = code;
+        updatesoundexarray(code, soundex, sIndex);
     }
 }
 
