@@ -39,3 +39,15 @@ TEST(SoudexTestsuite, checktwovowel)
   EXPECT_EQ('2', soundex[2]);
   EXPECT_EQ('2', soundex[3]);
 }
+
+TEST(SoudexTestsuite, checkzeropadding)
+{
+ // to check zeropadding
+  char soundex[5] = {};
+  const char* name = "B";
+  generateSoundex(name, soundex);
+  EXPECT_EQ('B', soundex[0]);
+  EXPECT_EQ('0', soundex[1]);
+  EXPECT_EQ('0', soundex[2]);
+  EXPECT_EQ('0', soundex[3]);
+}
