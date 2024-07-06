@@ -22,7 +22,7 @@ int Fun_set6value(char c)
 int Fun_set5value(char c)
 {
     c = toupper(c);
-    if (c == 'M' || c == "N")
+    if (c == 'M' || c == 'N')
     {
         return 5;
     }
