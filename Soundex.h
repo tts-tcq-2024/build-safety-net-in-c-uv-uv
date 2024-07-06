@@ -5,6 +5,32 @@
 #include <ctype.h>
 #include <string.h>
 
+
+
+int Arraycheck(char c, int row_value ,int column_value)
+{
+    char SetArray[7][8] = {
+    {'B','F','P','V'},
+    {'C','G','J','K','Q','S','X','Z'},
+    {'D','T'},
+    {'L'},
+    {'M','N'},
+    {'R'},
+    {'A','E','I','O','U','H','W','Y'}
+    };
+
+     for (int i = 0; i < column_value; i++)
+    {
+        if (c == SetArray[row_value][i])
+        {
+            return 1;
+            break;
+        }
+    }
+    return 0;
+}
+
+
 int Fun_set6value(char c)
 {
     c = toupper(c);
@@ -59,23 +85,12 @@ int Fun_set3value(char c)
         return Fun_set4value(c);
     }
 }
-int Array2check(char c)
-{
-    char Set2Array[8] = {'C','G','J','K','Q','S','X','Z'};
-     for (int i = 0; i < 8; i++)
-    {
-        if (c == Set2Array[i])
-        {
-            return 1;
-            break;
-        }
-    }
-    return 0;
-}
 int Fun_set2value(char c)
 {
     c = toupper(c);
-    if (Array2check(c) == 1)
+    int row_value = 1;
+    int column_value = 8;
+    if (Arraycheck(c,row_value,column_value) == 1)
     {
         return 2;
     }
