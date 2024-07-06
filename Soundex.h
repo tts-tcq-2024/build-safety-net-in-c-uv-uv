@@ -128,11 +128,12 @@ char getSoundexCode(char c) {
 
 }
 
-int updatesoundex(char code, char soundex, int sIndex)
+int updatesoundex(char code, char* soundex, int sIndex)
 {
     if (code != '0' && code != soundex)
      {
-        soundex[sIndex++] = code;
+        soundex[sIndex] = code;
+        sIndex=sIndex+1;
         return sIndex;
      }
      else
