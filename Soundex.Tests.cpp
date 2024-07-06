@@ -18,7 +18,7 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits)
 TEST(SoudexTestsuite, Checktwovowels)
 {
 // to check two vowels case
-  soundex[5] = {};
+  char soundex[5] = {};
   const char* name = "Tymczak";
   generateSoundex(name, soundex);
   EXPECT_EQ('T', soundex[0]);
