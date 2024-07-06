@@ -4,6 +4,6 @@
 TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
  //AAA
   char soundex[5];
-  generateSoundex("AX", soundex);
-  ASSERT_EQ(soundex,"A200");
+  // to check positive case
+  ASSERT_EQ(generateSoundex("AXDL", soundex),"A234");
 }
