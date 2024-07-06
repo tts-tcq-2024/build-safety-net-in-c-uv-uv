@@ -2,17 +2,16 @@
 #include "Soundex.h"
 
 void generateSoundex(const char *name, char *soundex);
-TEST(SoudexTestsuite, Checktwovowels)
+TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits)
 {
-// to check two vowels case
-    const char* expectedSoundex = "R163";
-    char soundex[5] = {};
-    const char* name = "Robert";
-    generateSoundex(name, soundex);
-    EXPECT_EQ(expectedSoundex[0], soundex[0]);
-    EXPECT_EQ(expectedSoundex[1], soundex[1]);
-    EXPECT_EQ(expectedSoundex[2], soundex[2]);
-    EXPECT_EQ(expectedSoundex[3], soundex[3]);
-    EXPECT_EQ(expectedSoundex[4], soundex[4]);
+ //AAA
+ // to check positive case
+  char soundex[5] = {};
+  const char* name = "AXDL";
+  generateSoundex(name, soundex);
+  EXPECT_EQ('A', soundex[0]);
+  EXPECT_EQ(2, soundex[1]);
+  EXPECT_EQ(3, soundex[2]);
+  EXPECT_EQ(4, soundex[3]);
 
 }
