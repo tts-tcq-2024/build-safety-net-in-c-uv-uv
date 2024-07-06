@@ -123,18 +123,17 @@ int Fun_set1value(char c)
     }
 }
 
-int getSoundexCode(char c) {
+char getSoundexCode(char c) {
     return Fun_set1value(c);
 
 }
 
 void updatesoundex(char code, char* soundex, int* sIndex)
-{
+ {
     if (code != '0' && code != soundex[(*sIndex) - 1])
-     {
+    {
         soundex[(*sIndex)++] = code;
-     }
-     
+    }
 }
 
 void padzeros(char* soundex, int sIndex)
@@ -151,7 +150,7 @@ void generateSoundex(const char *name, char *soundex) {
 
     for (int i = 1; i < len && sIndex < 4; i++) {
         char code = getSoundexCode(name[i]);
-        updatesoundex(code,soundex,&sIndex);
+        updatesoundex(code, soundex, &sIndex);
         
     }
     padzeros(soundex,sIndex);
