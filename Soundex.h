@@ -70,6 +70,7 @@ int Array2check(char c)
             break;
         }
     }
+    return 0;
 }
 int Fun_set2value(char c)
 {
@@ -84,10 +85,24 @@ int Fun_set2value(char c)
     }
 }
 
+int Array1check(char c)
+{
+    char Set1Array[4] = {'B','F','P','V'};
+     for (int i = 0; i < 4; i++)
+    {
+        if (c == Set1Array[i])
+        {
+            return 1;
+            break;
+        }
+    }
+    return 0;
+}
+
 int Fun_set1value(char c)
 {
     c = toupper(c);
-    if (c == 'B' || c == 'F' || c=='P' || c=='V')
+    if (Array1check(c) == 1)
     {
         return 1;
     }
