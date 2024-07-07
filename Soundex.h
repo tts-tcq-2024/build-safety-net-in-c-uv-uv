@@ -6,7 +6,7 @@
 #include <string.h>
 
 
-int Arraycheck(char c, int row_value ,int column_value)
+int Arraycheck(char c, int row_value ,int column_value)// function to check what is the value of the alphabet for soundex algorithm
 {
     char SetArray[6][8] = {
     {'B','F','P','V'},
@@ -122,26 +122,27 @@ char Fun_set1value(char c)
     }
 }
 
-char getSoundexCode(char c) {
+char getSoundexCode(char c) //function triggers to check for the value of alphabet
+{
     return Fun_set1value(c);
 
 }
 
-void padzeros(char* soundex, int sIndex)
+void padzeros(char* soundex, int sIndex) // Function to pad zero if needed
 {
     while (sIndex < 4)
     {
         soundex[sIndex++] = '0';
     }
 }
-void updatesoundexarray(char code, char* soundex, int* sIndex)
+void updatesoundexarray(char code, char* soundex, int* sIndex)// to update the soundex array
 {
     if(code != soundex[(*sIndex) - 1])
     {
             soundex[(*sIndex)++] = code;
     }
 }
-void updatesoundexvowel(char code, char* soundex, int* sIndex, char* previous_code)
+void updatesoundexvowel(char code, char* soundex, int* sIndex, char* previous_code)// To update soundex when there is zero between 2 vowel
 {
     
     if((*previous_code) == '0' && code == soundex[(*sIndex) - 1])
@@ -174,7 +175,7 @@ void generateSoundex(const char *name, char *soundex)
     int len = strlen(name);
     soundex[0] = getSoundexCode(name[0]);
     int sIndex = 1;
-    char previous_code = '7';
+    char previous_code = '7';// parameter to check 2 vowels
 
     for (int i = 1; i < len && sIndex < 4; i++) {
         char code = getSoundexCode(name[i]);
