@@ -6,7 +6,7 @@
 #include <string.h>
 
 
-int Arraycheck(char c, int row_value ,int column_value)// function to check what is the value of the alphabet for soundex algorithm
+int Arraycheck(char charactertobechecked, int row_value ,int column_value)// function to check what is the value of the alphabet for soundex algorithm
 {
     char SetArray[6][8] = {
     {'B','F','P','V'},
@@ -19,7 +19,7 @@ int Arraycheck(char c, int row_value ,int column_value)// function to check what
 
      for (int i = 0; i < column_value; i++)
     {
-        if (c == SetArray[row_value][i])
+        if (charactertobechecked == SetArray[row_value][i])
         {
             return 1;
             break;
@@ -29,9 +29,9 @@ int Arraycheck(char c, int row_value ,int column_value)// function to check what
 }
 
 
-char Fun_set6value(char c)
+char Fun_set6value(char charactertobechecked)
 {
-    c = toupper(c);
+    charactertobechecked = toupper(charactertobechecked);
     int row_value = 5;
     int column_value = 1;
     if (Arraycheck(c,row_value,column_value) == 1)
@@ -45,86 +45,86 @@ char Fun_set6value(char c)
 }
 
 
-char Fun_set5value(char c)
+char Fun_set5value(char charactertobechecked)
 {
-    c = toupper(c);
+    charactertobechecked = toupper(charactertobechecked);
     int row_value = 4;
     int column_value = 2;
-    if (Arraycheck(c,row_value,column_value) == 1)
+    if (Arraycheck(charactertobechecked,row_value,column_value) == 1)
     {
         return '5';
     }
     else
     {
-        return Fun_set6value(c);
+        return Fun_set6value(charactertobechecked);
     }
 }
 
 
-char Fun_set4value(char c)
+char Fun_set4value(char charactertobechecked)
 {
-    c = toupper(c);
+    charactertobechecked = toupper(charactertobechecked);
     int row_value = 3;
     int column_value = 1;
-    if (Arraycheck(c,row_value,column_value) == 1)
+    if (Arraycheck(charactertobechecked,row_value,column_value) == 1)
     {
         return '4';
     }
     else
     {
-        return Fun_set5value(c);
+        return Fun_set5value(charactertobechecked);
     }
 }
 
 
-char Fun_set3value(char c)
+char Fun_set3value(char charactertobechecked)
 {
-    c = toupper(c);
+    charactertobechecked = toupper(charactertobechecked);
     int row_value = 2;
     int column_value = 2;
-    if (Arraycheck(c,row_value,column_value) == 1)
+    if (Arraycheck(charactertobechecked,row_value,column_value) == 1)
     {
         return '3';
     }
     else
     {
-        return Fun_set4value(c);
+        return Fun_set4value(charactertobechecked);
     }
 }
-char Fun_set2value(char c)
+char Fun_set2value(char charactertobechecked)
 {
-    c = toupper(c);
+    charactertobechecked = toupper(charactertobechecked);
     int row_value = 1;
     int column_value = 8;
-    if (Arraycheck(c,row_value,column_value) == 1)
+    if (Arraycheck(charactertobechecked,row_value,column_value) == 1)
     {
         return '2';
     }
     else
     {
-        return Fun_set3value(c);
+        return Fun_set3value(charactertobechecked);
     }
 }
 
 
-char Fun_set1value(char c)
+char Fun_set1value(char charactertobechecked)
 {
-    c = toupper(c);
+    charactertobechecked = toupper(charactertobechecked);
     int row_value = 0;
     int column_value = 4;
-    if (Arraycheck(c,row_value,column_value) == 1)
+    if (Arraycheck(charactertobechecked,row_value,column_value) == 1)
     {
         return '1';
     }
     else
     {
-        return Fun_set2value(c);
+        return Fun_set2value(charactertobechecked);
     }
 }
 
-char getSoundexCode(char c) //function triggers to check for the value of alphabet
+char getSoundexCode(char charactertobechecked) //function triggers to check for the value of alphabet
 {
-    return Fun_set1value(c);
+    return Fun_set1value(charactertobechecked);
 
 }
 
